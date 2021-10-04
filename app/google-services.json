@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "765051023002",
+    "project_id": "sangsaeng-459ef",
+    "storage_bucket": "sangsaeng-459ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:765051023002:android:8b627c23098be7fdeeb923",
+        "android_client_info": {
+          "package_name": "com.example.sangsaeng"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "765051023002-gfkq1as1121u2011a1leikie75pjfo72.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBjBxyY6RAOQaUjv_wIY3NJ24C9HDG_0cc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "765051023002-gfkq1as1121u2011a1leikie75pjfo72.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
