@@ -59,8 +59,10 @@ class MainActivity : AppCompatActivity() {
 
         }
         btn_register.setOnClickListener {
-            val intent = Intent(this, CreateAccountActivity::class.java)
-            startActivity(intent)
+            Log.d(TAG,"회원가입 클릭")
+            val register_UI : Intent = Intent(this, RegisterActivity::class.java)
+            startActivity(register_UI)
+
         }
 
         btn_logout.setOnClickListener {
