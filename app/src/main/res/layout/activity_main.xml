@@ -43,6 +43,9 @@
         app:layout_constraintTop_toBottomOf="@+id/edit_pw"
         app:layout_goneMarginEnd="100dp" />
 
+
+
+
     <Button
         android:id="@+id/btn_register"
         android:layout_width="wrap_content"
@@ -66,6 +69,7 @@
         app:layout_constraintHorizontal_bias="0.483"
         app:layout_constraintStart_toStartOf="@+id/tv_message" />
 
+
     <TextView
         android:id="@+id/tv_message"
         android:layout_width="118dp"
@@ -78,5 +82,23 @@
         app:layout_constraintStart_toStartOf="@+id/edit_pw"
         app:layout_constraintTop_toBottomOf="@+id/edit_pw"
         app:layout_constraintVertical_bias="0.084" />
+
+    <TextView
+        android:id="@+id/btn_login_two"
+        android:layout_width="118dp"
+        android:layout_height="54dp"
+        android:layout_marginTop="144dp"
+        android:text="main"
+        android:textSize="30dp"
+        android:gravity="center"
+        android:textColor="#3F51B5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/edit_pw"
+        app:layout_constraintStart_toStartOf="@+id/edit_pw"
+        app:layout_constraintTop_toBottomOf="@+id/edit_pw"
+        app:layout_constraintVertical_bias="0.256" />
+
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,10 +7,18 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.core.widget.NestedScrollView
+import androidx.fragment.app.ListFragment
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
+import com.google.android.material.navigation.NavigationBarView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
@@ -19,8 +27,13 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+
     private lateinit var auth: FirebaseAuth
     private val TAG : String = "MainActivity"
+
+
+    lateinit var navController : NavController
+//    lateinit var nestedScrollView : NestedScrollView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +57,15 @@ class MainActivity : AppCompatActivity() {
                             Log.d(TAG, "signInWithEmail:success")
                             val user = auth.currentUser
                             updateUI(user)
+
+                            if(auth. currentUser !=  null)
+                            btn_login_two.setOnClickListener {
+                                val intent = Intent(this, ItemActivity::class.java)
+                                startActivity(intent)
+                            }
+
+
+
                         } else {
                             // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithEmail:failure", task.exception)
@@ -59,14 +81,14 @@ class MainActivity : AppCompatActivity() {
 
         }
         btn_register.setOnClickListener {
-            Log.d(TAG,"회원가입 클릭")
-            val register_UI : Intent = Intent(this, RegisterActivity::class.java)
+            Log.d(TAG, "회원가입 클릭")
+            val register_UI: Intent = Intent(this, RegisterActivity::class.java)
             startActivity(register_UI)
 
         }
 
         btn_logout.setOnClickListener {
-                auth.signOut()
+            auth.signOut()
 
             tv_message.setText("로그인이 필요합니다..")
             btn_logout.isEnabled = false
@@ -74,7 +96,10 @@ class MainActivity : AppCompatActivity() {
             btn_register.isEnabled = true
         }
 
+
+
     }
+
     override fun onResume() {
         super.onResume()
         val currentUser = auth?.currentUser
@@ -96,6 +121,10 @@ class MainActivity : AppCompatActivity() {
             btn_login.isEnabled = false
             btn_register.isEnabled = false
             btn_logout.isEnabled = true
+
+
+
+
         } else {
             tv_message.setText("로그인이 필요합니다..")
             btn_logout.isEnabled = false
@@ -112,5 +141,6 @@ class MainActivity : AppCompatActivity() {
             imm.hideSoftInputFromWindow(view.windowToken, 0)
         }
     }
+
 
 }

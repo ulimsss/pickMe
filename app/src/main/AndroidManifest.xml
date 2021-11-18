@@ -10,6 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sangsaeng">
         <activity
+            android:name=".ItemActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ListActivity"
+            android:exported="false"
+            android:label="@string/title_activity_list"
+            android:theme="@style/Theme.Sangsaeng.NoActionBar" />
+        <activity
             android:name=".RegisterActivity"
             android:exported="true" />
         <activity
