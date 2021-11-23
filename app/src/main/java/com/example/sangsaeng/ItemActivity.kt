@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.TextView
 import com.google.firebase.database.*
 import com.google.firebase.messaging.FirebaseMessaging
+import kotlinx.android.synthetic.main.activity_item.*
 
 class ItemActivity : AppCompatActivity() {
     //  토큰 출력하기
@@ -40,8 +41,18 @@ class ItemActivity : AppCompatActivity() {
                 override fun onDataChange(snapshot: DataSnapshot) {
                     snapshot?.let {
                         val data = it.getValue()
-                        val textView:TextView = findViewById(R.id.message)
-                        textView.text = data.toString()
+                        if (data == "1"){
+                            img.setImageResource(R.drawable.rain);
+                            val textView:TextView = findViewById(R.id.message)
+                           // textView.text = data.toString()
+                            textView.text = "비가 오니 우산을 챙기세요"
+                        }
+                        if (data == "0"){
+                            img.setImageResource(R.drawable.sun);
+                            val textView:TextView = findViewById(R.id.message)
+                            textView.text = data.toString()
+                        }
+
                     }
                 }
                 override fun onCancelled(error: DatabaseError) {
